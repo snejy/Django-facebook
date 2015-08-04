@@ -297,6 +297,7 @@ class FacebookUserConverter(object):
         '''
         if self._profile is None:
             profile = self.open_facebook.me()
+            profile['email'] = self.open_facebook.get('me', fields='email').get('email')
             profile['image'] = self.open_facebook.my_image_url('large')
             profile['image_thumb'] = self.open_facebook.my_image_url()
             self._profile = profile

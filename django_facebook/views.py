@@ -61,7 +61,6 @@ def _connect(request, graph):
     backend = get_registration_backend()
     context = RequestContext(request)
     connect_facebook = to_bool(request.REQUEST.get('connect_facebook'))
-
     logger.info('trying to connect using Facebook')
     if graph:
         logger.info('found a graph object')
